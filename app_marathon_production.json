@@ -1,0 +1,15 @@
+{
+    "id": "microservice2-production", 
+    "container": {
+      "docker": {
+        "image": "localhost:5000/devopsly200-microservice2-productionstage",
+        "network": "BRIDGE",
+        "portMappings": [
+          {"containerPort": 8000, "hostPort": 31350, "servicePort": 8000}
+        ]
+      }
+    },
+    "cpus": 0.2,
+    "mem": 100.0,
+    "instances": 1
+}
