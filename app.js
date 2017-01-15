@@ -3,7 +3,7 @@ var port = require('./port');
 
 var server = http.createServer(function (request, response) {
   response.writeHead(200, {"Content-Type": "text/plain"});
-  response.end("Meow\n");
+  response.end("Welcome\n");
 });
 
 // server.listen(port.number);
