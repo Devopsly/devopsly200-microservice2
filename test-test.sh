@@ -9,14 +9,14 @@ no="no"
 while read line
 do
         name=$line
-        if [[ $name == *"$searchString1"* ]]  || [[ $name == *"$searchString2"* ]];
+        if [[ $name == "SUCCESS" ]] ;  
         then
 		echo succeeded
                 success="yes"
         fi
 done < run-tests-on-test.txt 
 
-if [ $success == *"$no"* ]
+if [[ $success == "$no" ]];
 then
 # rollback
 	echo rolling-back
@@ -24,7 +24,7 @@ then
 	sh deploy-test.sh
 	exit 1
 fi
-if [ $success == *"$yes"* ]
+if [[ $success == "$yes" ]];
 then
 # rollback
 	echo correcting-last-failed
