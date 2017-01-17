@@ -3,7 +3,7 @@ marathon=$(curl http://myip.dnsomatic.com)
 echo ${marathon}
 
 echo Deleting test failed
-curl -X DELETE -H "Content-Type: application/json" http://${marathon}:8080/v2/apps/microservice1-test-failed?force=true 
+curl -X DELETE -H "Content-Type: application/json" http://${marathon}:8080/v2/apps/microservice2-test-failed?force=true 
 sleep 5 
 echo posting app
 curl -X POST -H "Content-Type: application/json" http://${marathon}:8080/v2/apps -d@app_marathon_test_failed.json

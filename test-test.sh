@@ -20,15 +20,16 @@ if [ "$success" = "$no" ];
 then
 # rollback
 	echo rolling-back
-        docker rmi -f localhost:5000/devopsly200-microservice1-teststage
-	sh deploy-test.sh
+	sh deploy-test-lastsuccess.sh
+	sh deploy-test-failed.sh
 	exit 1
 fi
+
 if [ "$success" = "$yes" ];
 then
-# rollback
-	echo correcting-last-failed
-        docker rmi -f localhost:5000/devopsly200-microservice1-teststage-failed
-	sh deploy-test-failed.sh
+	docker rmi -f localhost:5000/devopsly200-microservice2-teststage-lastsuccess
+	docker build -t localhost:5000/devopsly200-microservice2-teststage-lastsuccess -f DockerfileTest .
+	docker push localhost:5000/devopsly200-microservice2-teststage-lastsuccess
+	echo Tests-succeeded-updated-lastsuccess-image 
 fi
 
