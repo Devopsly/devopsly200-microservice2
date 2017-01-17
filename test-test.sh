@@ -9,7 +9,7 @@ no="no"
 while read line
 do
         name=$line
-        if [ $name == *"$searchString1"* ]  || [ $name == *"$searchString2"* ];
+        if [[ $name == *"$searchString1"* ]]  || [[ $name == *"$searchString2"* ]];
         then
 		echo succeeded
                 success="yes"
