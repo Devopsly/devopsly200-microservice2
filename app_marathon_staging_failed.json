@@ -2,7 +2,7 @@
     "id": "microservice2-staging-failed", 
     "container": {
       "docker": {
-        "image": "localhost:5000/devopsly200-microservice2-stagingstage-failed",
+        "image": "localhost:5000/devopsly200-microservice2-stagingstage",
         "network": "BRIDGE",
         "portMappings": [
           {"containerPort": 8000, "hostPort": 31326, "servicePort": 8000}

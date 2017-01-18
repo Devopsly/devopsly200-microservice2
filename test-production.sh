@@ -28,7 +28,7 @@ fi
 if [ "$success" = "$yes" ];
 then
 	docker rmi -f localhost:5000/devopsly200-microservice2-productionstage-lastsuccess
-	docker build -t localhost:5000/devopsly200-microservice2-productionstage-lastsuccess -f DockerfileTest .
+	docker build -t localhost:5000/devopsly200-microservice2-productionstage-lastsuccess -f DockerfileProduction .
 	docker push localhost:5000/devopsly200-microservice2-productionstage-lastsuccess
 	echo Tests-succeeded-updated-lastsuccess-image 
 fi
