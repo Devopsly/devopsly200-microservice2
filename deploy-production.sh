@@ -8,3 +8,4 @@ sleep 5
 echo posting app
 curl -X POST -H "Content-Type: application/json" http://${marathon}:8080/v2/apps -d@app_marathon_production.json
 echo Deployed to production
+sleep 5 
